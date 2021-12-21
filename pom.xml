@@ -46,6 +46,12 @@
 			<version>8.0.27</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>9.4.1.jre8</version>
+		</dependency>
 
 	</dependencies>
 
