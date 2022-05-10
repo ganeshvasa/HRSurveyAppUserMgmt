@@ -15,7 +15,7 @@ import com.mysql.jdbc.Statement;
 public class MYSQLDML {
    public static void main(String[] args) {
 	   
-	   dbInsert("2021-12-18 12:58:02, otp", "2021-12-18 12:58:02", "A", "ZAIN", "95650471543");
+	   dbInsert("2022-03-15 10:13:02, otp", "2022-03-15 10:13:02", "A", "STC", "95650471543");
    }
    
    public static String dbInsert(String msgBody, String msgSentTime, String status,String serviceProvider, String mobileNum) {
@@ -23,7 +23,8 @@ public class MYSQLDML {
       java.sql.Statement stmt = null;
       try {
          try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+         //   Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        	 Class.forName("com.mysql.jdbc.Driver");
          } catch (Exception e) {
             System.out.println(e);
       }
@@ -31,7 +32,8 @@ public class MYSQLDML {
 //         Date date = new Date();
 //         String currentTime = dateFormat.format(date);
 //         System.out.println("currentTime:"+currentTime);
-      conn =  DriverManager.getConnection("jdbc:sqlserver://bb-moon.database.windows.net;databaseName=SMSMON", "dbmgmt", "KG&sas2sv");
+      //conn =  DriverManager.getConnection("jdbc:sqlserver://bb-moon.database.windows.net;databaseName=SMSMON", "dbmgmt", "KG&sas2sv");
+      conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/SRS", "root", "vasa@123");
       System.out.println("Connection is created successfully:");
       stmt = conn.createStatement();
       
